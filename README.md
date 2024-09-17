@@ -1,0 +1,1 @@
+A simple Online Resume project made with Django for the back-end and Bootstrap for the front-end

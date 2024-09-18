@@ -229,40 +229,32 @@ Start Content
         <div class="testimonialSlider">
           <div class="swiper testimonialSwiper">
             <div class="swiper-wrapper">
+              {% for t in testimonials %}
+              {% if t.is_active %}
               <div class="swiper-slide">
                 <div class="testimonialCard">
                   <div class="row align-items-center">
                     <div class="col-sm-auto">
                       <div class="tImgCol">
-                        <img src="{% static 'images/profile.jpg'%}" alt="...">
+                        {% if t.thumbnail %}
+                        <img src="{{ t.thumbnail.url }}" alt="Testimonial from {{ t.name }}">
+                        {% else %}
+                        <img src="{% static 'images/default-profile.jpg' %}" alt="Default profile picture">
+                        {% endif %}
                       </div>
                     </div>
                     <div class="col-sm">
                       <div class="tContentCol">
-                        <h4 class="xsTitle bold">Competent</h4>
-                        <p>A passionate worker that delivers effectively and on time. Deliverables are always on schedule</p>
+                        <h4 class="xsTitle bold">{{ t.name }}</h4>
+                        <p class="role">{{ t.role }}</p>
+                        <p>{{ t.quote }}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="testimonialCard">
-                  <div class="row align-items-center">
-                    <div class="col-sm-auto">
-                      <div class="tImgCol">
-                        <img src="{% static 'images/profile.jpg'%}" alt="...">
-                      </div>
-                    </div>
-                    <div class="col-sm">
-                      <div class="tContentCol">
-                        <h4 class="xsTitle bold">Amazing to work with</h4>
-                        <p>A good colleague and an amazing team player that gets on well with co-workers. Co-ordinates well with colleagues to deliver on schedule.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% endif %}
+              {% endfor %}
             </div>
             <div class="test-swiper-button-next swiper-button-next swiperBtnStyle"></div>
             <div class="test-swiper-button-prev swiper-button-prev swiperBtnStyle"></div>
@@ -287,30 +279,27 @@ Start Content
         </div>
       </div>
       <div class="row g-3">
+        {% for blog in blogs %}
+        {% if blog.is_active %}
         <div class="col-lg-6">
           <div class="cardStyle1">
-            <h4 class="mdTitle cs1Title"><a href="javascript:void(0)">How to implement Django into your project</a></h4>
+            <h4 class="mdTitle cs1Title">
+              <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a>
+            </h4>
             <ul class="cardOptionCol">
-              <li>08 Oct 2021</li>
-              <li>Django</li>
+              <li>{{ blog.timestamp|date:"d M Y" }}</li>
+              <li>{{ blog.author }}</li>
             </ul>
-            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+            <p>{{ blog.description }}</p>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="cardStyle1">
-            <h4 class="mdTitle cs1Title"><a href="javascript:void(0)">Using code to structure your marketplace</a></h4>
-            <ul class="cardOptionCol">
-              <li>08 Oct 2021</li>
-              <li>Django</li>
-            </ul>
-            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-          </div>
-        </div>
+        {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
 </section>
+
   <!-- ================================
   End Content
   ================================= -->

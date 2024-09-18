@@ -113,7 +113,7 @@ class Portfolio(models.Model):
     def __str__(self):
         return self.name
     
-    def get_absolure_url(self):
+    def get_absolute_url(self):
         return f"/portfolio/{self.slug}"
     
 
@@ -142,7 +142,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.name
     
-    def get_absolure_url(self):
+    def get_absolute_url(self):
         return f"/blog/{self.slug}"
     
 

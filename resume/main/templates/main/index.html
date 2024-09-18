@@ -173,7 +173,9 @@ Start Content
                 <ul class="portfolioOption">
                   <li><span class="dateLbl">{% now 'Y' %}</span></li>
                 </ul>
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <p>
+                  A simple Hospital Management system made with Django for the back-end and Bootstrap for the front-end.
+               </p>
               </div>
             </div>
           </div>
@@ -182,17 +184,19 @@ Start Content
           <div class="row g-4 align-items-center">
             <div class="col-md-auto">
               <div class="portfolioImgCol">
-                <a href="javascript:void(0)"><img src="{% static 'images/work-img.jpg'%}" alt="..."></a>
+                <a href="http://127.0.0.1:8000/portfolio/blog"><img src="{% static 'images/blog.png'%}" alt="..."></a>
               </div>
             </div>
             <div class="col-md">
               <div class="portfolioContentCol">
-                <h4 class="lgTitle"><a href="javascript:void(0)">Portfolio option 2</a></h4>
+                <h4 class="lgTitle"><a href="http://127.0.0.1:8000/portfolio/blog">Blog</a></h4>
                 <ul class="portfolioOption">
                   <li><span class="dateLbl">{% now 'Y' %}</span></li>
-                  <li>Django</li>
+                  
                 </ul>
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <p>
+                  A simple Blog made with Django for the back-end and Bootstrap for the front-end.
+                </p>
               </div>
             </div>
           </div>
@@ -201,22 +205,25 @@ Start Content
           <div class="row g-4 align-items-center">
             <div class="col-md-auto">
               <div class="portfolioImgCol">
-                <a href="javascript:void(0)"><img src="{% static 'images/work-img.jpg'%}" alt="..."></a>
+                <a href="http://127.0.0.1:8000/portfolio/library-management"><img src="{% static 'images/library_management.png'%}" alt="..."></a>
               </div>
             </div>
             <div class="col-md">
               <div class="portfolioContentCol">
-                <h4 class="lgTitle"><a href="javascript:void(0)">Portfolio option 3</a></h4>
+                <h4 class="lgTitle"><a href="http://127.0.0.1:8000/portfolio/library-management">Library Management</a></h4>
                 <ul class="portfolioOption">
                   <li><span class="dateLbl">{% now 'Y' %}</span></li>
                   <li>Marketplace</li>
                 </ul>
-                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <p>
+                  A simple Library Management system made with Django for the back-end and Bootstrap for the front-end.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="testimonialCol">
         <h4 class="smText regular d-block">Testimonials</h4>
         <div class="testimonialSlider">
@@ -232,8 +239,8 @@ Start Content
                     </div>
                     <div class="col-sm">
                       <div class="tContentCol">
-                        <h4 class="xsTitle bold">Amazing to work with!</h4>
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <h4 class="xsTitle bold">Competent</h4>
+                        <p>A passionate worker that delivers effectively and on time. Deliverables are always on schedule</p>
                       </div>
                     </div>
                   </div>
@@ -249,8 +256,8 @@ Start Content
                     </div>
                     <div class="col-sm">
                       <div class="tContentCol">
-                        <h4 class="xsTitle bold">Amazing to work with!</h4>
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <h4 class="xsTitle bold">Amazing to work with</h4>
+                        <p>A good colleague and an amazing team player that gets on well with co-workers. Co-ordinates well with colleagues to deliver on schedule.</p>
                       </div>
                     </div>
                   </div>
@@ -276,7 +283,7 @@ Start Content
           <h4 class="smText regular">Recent posts</h4>
         </div>
         <div class="col-auto">
-          <a href="javascript:void(0)" class="simpleLink">View all</a>
+          <a href="{% url 'main:blogs' %}" class="simpleLink">View all</a>
         </div>
       </div>
       <div class="row g-3">
